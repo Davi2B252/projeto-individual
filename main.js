@@ -16,10 +16,11 @@ function checkGuess(userGuess) {
     } else {
         console.log("Tente um número maior!");
     }
-if (guesses < 10) {
-    console.log("Você tem mais " + (10 - guesses) + " tentativas");
-} if (guesses >= 10) {
+if (guesses < 20) {
+    console.log("Você tem mais " + (20 - guesses) + " tentativas");
+} if (guesses >= 20) {
     console.log("Você perdeu"); 
+    displayImage("imagem-de-perca") 
 }}
 
 displayImage("imagem-do-jogo.png");
@@ -31,3 +32,7 @@ function displayImage(imagepatch) {
 }
 
 //versão 1.0
+
+while (imagem-de-perca) {
+    return userGuess
+}
