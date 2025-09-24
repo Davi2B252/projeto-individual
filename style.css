@@ -1,1 +1,59 @@
+@font-face {
+    font-family: 'CourierCustom';
+    src: url('fonts/courier.woff2') format('woff2'); /* exemplo */
+    font-weight: bold;
+}
+
+.color {
+    background-color: black;
+    color: white;
+}
+
+.box {
+    width: 320px;
+    height: 200px;
+    padding: 20px;
+    margin: 20px;
+    border: 2px solid red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.5;
+    transition: background-color 0.3s, transform 0.3s;
+    cursor: pointer;
+}
+
+.box:hover {
+    background-color: #333;
+    transform: scale(1.1);
+}
+
+.text {
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.button {
+    background-color: blue;
+    color: thistle;
+    border: 2px solid black;
+    padding: 12px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 20px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.button:hover {
+    background-color: darkblue;
+    transform: scale(1.05);
+}
+
+body {
+    background-color: aquamarine;
+}
 

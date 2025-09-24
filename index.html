@@ -1,1 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jogo do Número</title>
+  <style>
+    .caixa {
+      margin: 20px auto;
+      padding: 20px;
+      border: 2px solid black;
+      width: 300px;
+      text-align: center;
+    }
 
+    #respostapronumero {
+      display: none;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    #imagem {
+      margin-top: 20px;
+    }
+
+    #imagem img {
+      width: 300px;
+      display: block;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+  <h1>Jogo do Número</h1>
+
+  <div class="caixa">
+    <p>Digite um número de 1 a 100:</p>
+    <input type="number" id="userGuess" min="1" max="100">
+    <button onclick="checkGuess()">Tentar</button>
+    <p id="respostapronumero"></p>
+    <div id="imagem"></div> <!-- Aqui a imagem vai aparecer -->
+  </div>
+
+  <script>
+    let randomnumber = Math.floor(Math.random() * 100) + 1;
+    let guesses = 0;
+
+    function checkGuess() {
+      let userGuess = parseInt(document.getElementById("userGuess").value);
+      let resposta = document.getElementById("respostapronumero");
+      let divImagem = document.getElementById("imagem"); // Corrigido
+      resposta.style.display = "block";
+      guesses++;
+
+      // Limpa imagem anterior
+      divImagem.innerHTML = '';
+
+      if (userGuess === randomnumber) {
+        resposta.textContent = "🎉 Número correto! Tentativas: " + guesses;
+        document.body.style.backgroundColor = "lightgreen"; 
+
+        let img = document.createElement("img");
+        img.src = "imagem.do.jogo.jpeg"; // caminho da imagem
+        img.alt = "Parabéns!";
+        divImagem.appendChild(img);
+
+      } else if (userGuess > randomnumber) {
+        resposta.textContent = "Tente um número menor!";
+      } else {
+        resposta.textContent = "Tente um número maior!";
+      }
+    }
+  </script>
+</body>
+</html>
